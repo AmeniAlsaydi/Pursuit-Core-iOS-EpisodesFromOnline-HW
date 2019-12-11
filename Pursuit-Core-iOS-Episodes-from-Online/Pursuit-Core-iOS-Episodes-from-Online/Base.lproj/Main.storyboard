@@ -86,6 +86,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Shows" id="2lE-WL-bLH"/>
                     <connections>
+                        <outlet property="searchBar" destination="vjY-P0-Z0S" id="VDE-V2-XyP"/>
                         <outlet property="tableView" destination="1Vv-bk-K6k" id="MJA-Ha-1Vo"/>
                     </connections>
                 </viewController>

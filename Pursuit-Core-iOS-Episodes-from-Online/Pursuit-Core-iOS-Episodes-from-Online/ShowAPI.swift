@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct ShowAPI {
+struct ShowAPIClient {
     static func getShows(searchQuery: String, completion: @escaping (Result<[Show], AppError>)-> ()){
-        let endpointUrlString = "http://api.tvmaze.com/search/shows?q=\(searchQuery)"
+        let endpointUrlString = "https://api.tvmaze.com/search/shows?q=\(searchQuery)"
         
         NetworkHelper.shared.performDataTask(with: endpointUrlString) { (result) in
             switch result {
