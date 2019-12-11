@@ -19,13 +19,26 @@ class ShowViewController: UIViewController {
         }
     }
     
-    var searchQuery = "girls"
+    var searchQuery = "" {
+        didSet {
+            ShowAPIClient.getShows(searchQuery: searchQuery) { (result) in
+                switch result {
+                case .failure(let appError):
+                    print("appError: \(appError)")
+                case .success(let shows):
+                    DispatchQueue.main.async {
+                        self.shows = shows.filter{($0.show?.name.lowercased().contains(self.searchQuery.lowercased()) ?? false)}
+                    }
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         searchBar.delegate = self
-        loadShows(searchQ: searchQuery)
+        //loadShows(searchQ: searchQuery)
         
     }
     
@@ -65,6 +78,15 @@ extension ShowViewController: UITableViewDataSource {
 }
 
 extension ShowViewController: UISearchBarDelegate {
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+         guard !searchText.isEmpty else {
+            shows = [Show]()
+                   return
+               }
+               searchQuery = searchText
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
 
