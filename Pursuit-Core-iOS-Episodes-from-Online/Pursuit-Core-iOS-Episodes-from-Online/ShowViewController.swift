@@ -15,7 +15,9 @@ class ShowViewController: UIViewController {
     
     var shows = [Show]() {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     

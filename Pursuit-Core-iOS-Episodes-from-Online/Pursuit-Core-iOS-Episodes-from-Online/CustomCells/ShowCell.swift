@@ -23,9 +23,8 @@ class ShowCell: UITableViewCell {
         // images are not secure so they dont load "http" 
         guard let mediumImageURL = theShow.show?.image?.medium else {
             return
-            // fatalError("no medium image for show \(theShow.show?.name ?? "xyz")")
+            
         }
-        // let originalImageURL = theShow.show?.image?.original
         
         NetworkHelper.shared.performDataTask(with: mediumImageURL) { (result) in
             switch result {
