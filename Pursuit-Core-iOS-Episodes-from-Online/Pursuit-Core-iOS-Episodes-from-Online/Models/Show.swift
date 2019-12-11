@@ -30,4 +30,3 @@ struct Rating: Decodable {
 }
 
 
-// why do we need to make all those optional
