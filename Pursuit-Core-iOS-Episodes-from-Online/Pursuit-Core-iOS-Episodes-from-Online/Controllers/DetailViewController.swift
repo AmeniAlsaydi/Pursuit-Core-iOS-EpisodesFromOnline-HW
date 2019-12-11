@@ -36,11 +36,26 @@ class DetailViewController: UIViewController {
         episodeNum.text = "Episode: \(theEpisode.number)"
         summaryLabel.text = theEpisode.summary
         
+        let imageURL = theEpisode.image?.original ?? "none"
+        
+         NetworkHelper.shared.performDataTask(with: imageURL) { (result) in
+                   switch result {
+                   case .failure(let appError):
+                       print("appError: \(appError)")
+                   case .success(let data):
+                       let image = UIImage(data: data)
+                       
+                       DispatchQueue.main.async {
+                           self.imageView.image = image
+                       }
+                   }
         
         
         
         
     }
     
+
+}
 
 }
