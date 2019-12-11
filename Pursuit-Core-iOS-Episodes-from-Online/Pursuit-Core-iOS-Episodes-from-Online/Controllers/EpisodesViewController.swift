@@ -24,7 +24,6 @@ class EpisodesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(theShow)
         tableView.dataSource = self
         loadEpisodes()
         tableView.delegate = self
@@ -33,19 +32,27 @@ class EpisodesViewController: UIViewController {
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? DetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("couldnt get detailVC or indexpath")
+        }
+        
+        detailVC.episode = episodes[indexPath.row]
+    }
+    
     func loadEpisodes() {
         
         let episodeID = theShow?.show?.id ?? 1
-        print(episodeID)
+
         EpisodeAPI.getEpisodes(episodeID: episodeID ) { (result) in
                switch result {
                      case .failure(let appError):
                          print("appError: \(appError)")
                      case .success(let episodes):
-                        print(episodes.count)
+                        
                          DispatchQueue.main.async {
                              self.episodes = episodes
-                            dump(episodes)
+                
                          }
                      }
         }

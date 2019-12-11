@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B739580123A1AEB4001803E7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B739580023A1AEB4001803E7 /* DetailViewController.swift */; };
 		B74420DF23A171C200D6737E /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74420DE23A171C200D6737E /* EpisodeCell.swift */; };
 		B74420E223A1760900D6737E /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74420E123A1760900D6737E /* EpisodesViewController.swift */; };
 		B74420E523A1771200D6737E /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74420E423A1771200D6737E /* Episode.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B739580023A1AEB4001803E7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B74420DE23A171C200D6737E /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		B74420E123A1760900D6737E /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 		B74420E423A1771200D6737E /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				CD01CD5D232178AF002D0255 /* ShowViewController.swift */,
 				B74420E123A1760900D6737E /* EpisodesViewController.swift */,
+				B739580023A1AEB4001803E7 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B739580123A1AEB4001803E7 /* DetailViewController.swift in Sources */,
 				B74B3EA623A07C0A0022CF51 /* NetworkHelper.swift in Sources */,
 				B74B3EA423A079300022CF51 /* ShowCell.swift in Sources */,
 				B74420E723A17A1900D6737E /* EpisodeAPI.swift in Sources */,
