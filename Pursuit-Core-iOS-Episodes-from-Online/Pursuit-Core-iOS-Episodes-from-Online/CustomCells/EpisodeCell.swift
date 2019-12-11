@@ -11,9 +11,13 @@ import UIKit
 class EpisodeCell: UITableViewCell {
     @IBOutlet weak var episodeImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var seasonLabel: UILabel!
+    @IBOutlet weak var seasonEpisodeLabel: UILabel!
     
     
-    // configure cell
+    func configureCell(for episode: Episode) {
+        nameLabel.text = episode.name
+        seasonEpisodeLabel.text = "Season: \(episode.season)"
+    }
+    
 }
 

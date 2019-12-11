@@ -31,11 +31,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nTP-8i-iHM">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nTP-8i-iHM">
                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="255"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="180" id="BQN-00-g9U"/>
-                                                        <constraint firstAttribute="height" constant="250" id="hOU-Qx-s0i"/>
+                                                        <constraint firstAttribute="height" constant="255" id="Ffn-ga-KEY"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxs-kS-9hf">
@@ -107,7 +107,7 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="756"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="152" id="xO4-kX-JdN" customClass="EpisodeCell" customModule="Pursuit_Core_iOS_Episodes_from_Online" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="episodeCell" rowHeight="152" id="xO4-kX-JdN" customClass="EpisodeCell" customModule="Pursuit_Core_iOS_Episodes_from_Online" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="152"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xO4-kX-JdN" id="Aga-wN-z7F">
@@ -115,19 +115,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zS-R8-OU2">
-                                                    <rect key="frame" x="8" y="8" width="150" height="136"/>
+                                                    <rect key="frame" x="8" y="11" width="150" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="g9B-io-dn9"/>
                                                         <constraint firstAttribute="height" constant="130" id="wUF-9M-oGr"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOA-rP-5UH">
-                                                    <rect key="frame" x="166" y="39" width="240" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOA-rP-5UH">
+                                                    <rect key="frame" x="166" y="39.5" width="240" height="20.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S: # E: #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e9-zR-9Sq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S: # E: #" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e9-zR-9Sq">
                                                     <rect key="frame" x="166" y="68" width="240" height="16"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <nil key="textColor"/>
@@ -137,19 +137,18 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="eOA-rP-5UH" secondAttribute="trailing" constant="8" id="04Q-oX-VkM"/>
                                                 <constraint firstItem="4e9-zR-9Sq" firstAttribute="top" secondItem="eOA-rP-5UH" secondAttribute="bottom" constant="8" id="0vh-rI-cEe"/>
-                                                <constraint firstItem="7zS-R8-OU2" firstAttribute="top" secondItem="Aga-wN-z7F" secondAttribute="top" constant="8" id="6lu-Eb-JL4"/>
-                                                <constraint firstItem="7zS-R8-OU2" firstAttribute="leading" secondItem="Aga-wN-z7F" secondAttribute="leading" constant="8" id="9y6-EY-xGS"/>
-                                                <constraint firstAttribute="bottom" secondItem="7zS-R8-OU2" secondAttribute="bottom" constant="8" id="Puc-x0-YOh"/>
+                                                <constraint firstItem="7zS-R8-OU2" firstAttribute="leading" secondItem="Aga-wN-z7F" secondAttribute="leading" constant="8" id="YCl-5a-Jbl"/>
                                                 <constraint firstItem="eOA-rP-5UH" firstAttribute="leading" secondItem="7zS-R8-OU2" secondAttribute="trailing" constant="8" id="aPN-0I-7Uw"/>
                                                 <constraint firstAttribute="trailing" secondItem="4e9-zR-9Sq" secondAttribute="trailing" constant="8" id="bKZ-13-8oy"/>
                                                 <constraint firstItem="4e9-zR-9Sq" firstAttribute="leading" secondItem="7zS-R8-OU2" secondAttribute="trailing" constant="8" id="hHj-DK-PAl"/>
+                                                <constraint firstItem="7zS-R8-OU2" firstAttribute="centerY" secondItem="Aga-wN-z7F" secondAttribute="centerY" id="vZ0-HG-zEH"/>
                                                 <constraint firstItem="4e9-zR-9Sq" firstAttribute="centerY" secondItem="Aga-wN-z7F" secondAttribute="centerY" id="ynV-jC-NeM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="episodeImage" destination="7zS-R8-OU2" id="vjB-og-brt"/>
                                             <outlet property="nameLabel" destination="eOA-rP-5UH" id="98b-9f-PKZ"/>
-                                            <outlet property="seasonLabel" destination="4e9-zR-9Sq" id="wm3-Bt-t6D"/>
+                                            <outlet property="seasonEpisodeLabel" destination="4e9-zR-9Sq" id="AuP-b6-Dqn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -165,6 +164,9 @@
                         <viewLayoutGuide key="safeArea" id="3bY-2s-y18"/>
                     </view>
                     <navigationItem key="navigationItem" title="Epidsodes" id="ypv-eI-Blj"/>
+                    <connections>
+                        <outlet property="tableView" destination="UnZ-Ky-402" id="TrW-WO-cAR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdi-T3-BA7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

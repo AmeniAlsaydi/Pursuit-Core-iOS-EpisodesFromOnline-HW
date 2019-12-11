@@ -40,8 +40,17 @@ class ShowViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         searchBar.delegate = self
+        tableView.delegate = self
         //loadShows(searchQ: searchQuery)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let episodeVC = segue.destination as? EpisodesViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("couldnt get episodeVC or indexPath")
+        }
+        
+        episodeVC.show = shows[indexPath.row]
     }
     
     
@@ -92,3 +101,10 @@ extension ShowViewController: UISearchBarDelegate {
     }
 }
 
+
+extension ShowViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 255
+    }
+    
+}
