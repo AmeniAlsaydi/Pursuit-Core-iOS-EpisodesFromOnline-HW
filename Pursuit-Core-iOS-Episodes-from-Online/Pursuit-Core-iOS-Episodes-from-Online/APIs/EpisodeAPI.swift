@@ -22,7 +22,7 @@ struct EpisodeAPI {
                     completion(.success(episodes))
 
                 } catch {
-                    
+                    print(error)
                 }
             }
         }

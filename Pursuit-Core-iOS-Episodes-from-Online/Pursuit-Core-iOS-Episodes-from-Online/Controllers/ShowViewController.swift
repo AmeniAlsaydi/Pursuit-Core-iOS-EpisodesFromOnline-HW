@@ -50,7 +50,7 @@ class ShowViewController: UIViewController {
             fatalError("couldnt get episodeVC or indexPath")
         }
         
-        episodeVC.show = shows[indexPath.row]
+        episodeVC.theShow = shows[indexPath.row]
     }
     
     

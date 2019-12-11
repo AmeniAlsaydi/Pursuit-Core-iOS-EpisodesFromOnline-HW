@@ -16,7 +16,22 @@ class EpisodeCell: UITableViewCell {
     
     func configureCell(for episode: Episode) {
         nameLabel.text = episode.name
-        seasonEpisodeLabel.text = "Season: \(episode.season)"
+        seasonEpisodeLabel.text = "Season: \(episode.season) Episode: \(episode.number)"
+        
+        let mediumImageUrl = episode.image?.medium ?? "no"
+        
+        NetworkHelper.shared.performDataTask(with: mediumImageUrl) { (result) in
+            switch result {
+            case .failure(let appError):
+                print("appError: \(appError)")
+            case .success(let data):
+                let image = UIImage(data: data)
+                
+                DispatchQueue.main.async {
+                    self.episodeImage.image = image
+                }
+            }
+        }
     }
     
 }

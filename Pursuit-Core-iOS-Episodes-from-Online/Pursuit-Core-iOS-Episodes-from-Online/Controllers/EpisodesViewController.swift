@@ -12,7 +12,7 @@ class EpisodesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var show: Show?
+    var theShow: Show?
     
     var episodes = [Episode]() {
         didSet {
@@ -24,23 +24,28 @@ class EpisodesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(theShow)
         tableView.dataSource = self
-        loadEpisodes(theShow: show!)
+        loadEpisodes()
         tableView.delegate = self
+        
         
 
     }
     
-    func loadEpisodes(theShow: Show) {
+    func loadEpisodes() {
         
-        let episodeID = theShow.show?.id ?? 0
+        let episodeID = theShow?.show?.id ?? 1
+        print(episodeID)
         EpisodeAPI.getEpisodes(episodeID: episodeID ) { (result) in
                switch result {
                      case .failure(let appError):
                          print("appError: \(appError)")
                      case .success(let episodes):
+                        print(episodes.count)
                          DispatchQueue.main.async {
                              self.episodes = episodes
+                            dump(episodes)
                          }
                      }
         }
