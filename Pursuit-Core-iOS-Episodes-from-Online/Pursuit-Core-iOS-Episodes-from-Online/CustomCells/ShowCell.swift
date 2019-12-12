@@ -25,8 +25,17 @@ class ShowCell: UITableViewCell {
             return
             
         }
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .orange
+        activityIndicator.startAnimating() // it's hidden until we explicitly start animating
+        activityIndicator.center = center
+        addSubview(activityIndicator) // we add the indicattor as a subview of the image view
         
-        NetworkHelper.shared.performDataTask(with: mediumImageURL) { (result) in
+        
+        NetworkHelper.shared.performDataTask(with: mediumImageURL) { [weak activityIndicator] (result) in
+            DispatchQueue.main.async {
+              activityIndicator?.stopAnimating() // hides when we stop animating the indicator
+            }
             switch result {
             case .failure(let appError):
                 print("appError: \(appError)")

@@ -20,7 +20,16 @@ class EpisodeCell: UITableViewCell {
         
         let mediumImageUrl = episode.image?.medium ?? "no"
         
-        NetworkHelper.shared.performDataTask(with: mediumImageUrl) { (result) in
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .orange
+        activityIndicator.startAnimating() // it's hidden until we explicitly start animating
+        activityIndicator.center = center
+        addSubview(activityIndicator) // we add the indicattor as a subview of the image view
+        
+        NetworkHelper.shared.performDataTask(with: mediumImageUrl) { [weak activityIndicator] (result) in
+            DispatchQueue.main.async {
+              activityIndicator?.stopAnimating() // hides when we stop animating the indicator
+            }
             switch result {
             case .failure(let appError):
                 print("appError: \(appError)")
