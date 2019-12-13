@@ -25,7 +25,7 @@ class ShowCell: UITableViewCell {
             return
             
         }
-        let activityIndicator = UIActivityIndicatorView(style: .large)
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
         activityIndicator.color = .orange
         activityIndicator.startAnimating() // it's hidden until we explicitly start animating
         activityIndicator.center = center

@@ -19,10 +19,11 @@ struct EpisodeAPI {
             case .success(let data):
                 do {
                     let episodes = try JSONDecoder().decode([Episode].self, from: data)
+                    print("episodes count \(episodes.count)")
                     completion(.success(episodes))
 
                 } catch {
-                    print(error)
+                    completion(.failure(.decodingError(error)))
                 }
             }
         }
