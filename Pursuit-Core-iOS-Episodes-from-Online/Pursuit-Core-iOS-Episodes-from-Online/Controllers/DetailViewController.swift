@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
         nameLabel.text = theEpisode.name
         seasonNum.text = "Season: \(theEpisode.season)"
         episodeNum.text = "Episode: \(theEpisode.number)"
-        summaryLabel.text = theEpisode.summary
+        summaryLabel.text = theEpisode.summary?.replacingOccurrences(of: "<p>",with: "").replacingOccurrences(of: "</p>",with: "")
         
         let imageURL = theEpisode.image?.original ?? "none"
         
