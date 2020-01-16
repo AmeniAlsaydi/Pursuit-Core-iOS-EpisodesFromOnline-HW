@@ -12,7 +12,7 @@ class EpisodesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var theShow: Show?
+    var theShow: ShowData?
     
     var episodes = [Episode]() {
         didSet {

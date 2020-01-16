@@ -15,7 +15,7 @@ class ShowCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
     
     
-    func configureCell(for theShow: Show) {
+    func configureCell(for theShow: ShowData) {
         
         titleLabel.text = theShow.show?.name
         ratingLabel.text = theShow.show?.rating?.average?.description ?? "No Rating"

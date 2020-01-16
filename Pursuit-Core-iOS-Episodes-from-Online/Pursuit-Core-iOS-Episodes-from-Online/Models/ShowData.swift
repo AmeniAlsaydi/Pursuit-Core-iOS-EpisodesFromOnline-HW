@@ -8,11 +8,12 @@
 
 import Foundation
 
-struct Show: Decodable {
-    let show: ShowInfo?
+struct ShowData: Decodable {
+    let score: Double 
+    let show: Show?
 }
 
-struct ShowInfo: Decodable {
+struct Show: Decodable {
     let id: Int
     let name: String
     let rating: Rating?

@@ -13,7 +13,7 @@ class ShowViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var shows = [Show]() {
+    var shows = [ShowData]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -91,7 +91,7 @@ extension ShowViewController: UITableViewDataSource {
 extension ShowViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
          guard !searchText.isEmpty else {
-            shows = [Show]()
+            shows = [ShowData]()
                    return
                }
                searchQuery = searchText

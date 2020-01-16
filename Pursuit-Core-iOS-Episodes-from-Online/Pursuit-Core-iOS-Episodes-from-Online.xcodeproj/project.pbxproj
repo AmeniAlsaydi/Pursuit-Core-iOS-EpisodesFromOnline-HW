@@ -14,7 +14,7 @@
 		B74420E723A17A1900D6737E /* EpisodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74420E623A17A1900D6737E /* EpisodeAPI.swift */; };
 		B74B3EA423A079300022CF51 /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3EA323A079300022CF51 /* ShowCell.swift */; };
 		B74B3EA623A07C0A0022CF51 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3EA523A07C0A0022CF51 /* NetworkHelper.swift */; };
-		B74B3EAB23A086F30022CF51 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3EAA23A086F30022CF51 /* Show.swift */; };
+		B74B3EAB23A086F30022CF51 /* ShowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3EAA23A086F30022CF51 /* ShowData.swift */; };
 		B74B3EAD23A08B220022CF51 /* ShowAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74B3EAC23A08B220022CF51 /* ShowAPI.swift */; };
 		CD01CD5C232178AF002D0255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CD5B232178AF002D0255 /* AppDelegate.swift */; };
 		CD01CD5E232178AF002D0255 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CD5D232178AF002D0255 /* ShowViewController.swift */; };
@@ -42,7 +42,7 @@
 		B74420E623A17A1900D6737E /* EpisodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeAPI.swift; sourceTree = "<group>"; };
 		B74B3EA323A079300022CF51 /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
 		B74B3EA523A07C0A0022CF51 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
-		B74B3EAA23A086F30022CF51 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		B74B3EAA23A086F30022CF51 /* ShowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowData.swift; sourceTree = "<group>"; };
 		B74B3EAC23A08B220022CF51 /* ShowAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAPI.swift; sourceTree = "<group>"; };
 		CD01CD58232178AF002D0255 /* Pursuit-Core-iOS-Episodes-from-Online.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Episodes-from-Online.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD01CD5B232178AF002D0255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		B74420E323A176A100D6737E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B74B3EAA23A086F30022CF51 /* Show.swift */,
+				B74B3EAA23A086F30022CF51 /* ShowData.swift */,
 				B74420E423A1771200D6737E /* Episode.swift */,
 			);
 			path = Models;
@@ -262,7 +262,7 @@
 				B74420E723A17A1900D6737E /* EpisodeAPI.swift in Sources */,
 				B74420E223A1760900D6737E /* EpisodesViewController.swift in Sources */,
 				CD01CD5E232178AF002D0255 /* ShowViewController.swift in Sources */,
-				B74B3EAB23A086F30022CF51 /* Show.swift in Sources */,
+				B74B3EAB23A086F30022CF51 /* ShowData.swift in Sources */,
 				B74420DF23A171C200D6737E /* EpisodeCell.swift in Sources */,
 				CD01CD5C232178AF002D0255 /* AppDelegate.swift in Sources */,
 				B74420E523A1771200D6737E /* Episode.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 
 struct ShowAPIClient {
-    static func getShows(searchQuery: String, completion: @escaping (Result<[Show], AppError>)-> ()){
+    static func getShows(searchQuery: String, completion: @escaping (Result<[ShowData], AppError>)-> ()){
         
         let searchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let endpointUrlString = "https://api.tvmaze.com/search/shows?q=\(searchQuery ?? "me")"
@@ -20,7 +20,7 @@ struct ShowAPIClient {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do {
-                    let shows = try JSONDecoder().decode([Show].self, from: data)
+                    let shows = try JSONDecoder().decode([ShowData].self, from: data)
                     completion(.success(shows))
                 } catch {
                     completion(.failure(.decodingError(error)))
